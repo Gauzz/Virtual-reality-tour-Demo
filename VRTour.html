@@ -1,0 +1,197 @@
+<html>
+  <head>
+    <title>VR Tour Demo</title>
+    <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script> 
+    <script src="https://unpkg.com/aframe-cubemap-component@0.1.3/dist/aframe-cubemap-component.min.js"></script> 
+  </head>
+   
+  <body>
+    <a-scene>
+
+      <!-- Universal contents -->
+
+     <a-assets>
+         <img id="arrow" src="arrow.png">
+     </a-assets>
+     <a-sky geometry="radius:300;" id="scene" src="room1.jpg"></a-sky>
+      <a-entity id="camera" camera look-controls wasd-controls checkpoint-controls="mode: animate">
+       <a-entity position="0 0 -1" geometry="primitive: ring; radiusOuter: 0.04; radiusInner: 0.02" material="color: #22313f; shader: flat; opacity: 0.5;" cursor="fuse:true;fuseTimeout:450;" raycaster="" scale="">
+       <a-animation begin="click" easing="ease-in" attribute="scale" fill="forwards" from="0.2 0.2 0.2" to="1 1 1" dur="150"></a-animation>
+       <a-animation begin="fusing" easing="ease-in" attribute="scale" fill="backwards" from="1 1 1" to="0.2 0.2 0.2" dur="1500"></a-animation>
+     </a-entity>
+     </a-entity>
+     <a-plane id="e1" material="color: #000000; side: double; opacity: 0.5;" geometry="width:1.2; height:0.5" scale="" position="-2 -2.585 -8.338" rotation="-23.31 0 0" wasd-controls="">
+     </a-plane>
+     <a-text id="text_kitchen" value= "Kitchen" side= "double" width = "6.5" height = "6.5" align = "center" position="-2 -2.585 -8.2" rotation="-23.31 0 0" wasd-controls=""></a-text>
+     <a-plane id="e2" material="color: #000000; side: double; opacity: 0.5;" geometry="width:1.7; height:0.5" scale="" position="0 -2.585 -8.338" rotation="-23.31 0 0" wasd-controls=""></a-plane>
+     <a-text id="text_room2" value= "Bed Room" side= "double" width= 6.5 height 6.5 align = "center" position="0 -2.585 -8.2" rotation="-23.31 0 0" wasd-controls=""></a-text>
+     <a-plane id="e3" material="color: #000000; side: double; opacity: 0.5;" geometry="width:1.8; height:0.5" scale="" position="2 -2.585 -8.338" rotation="-23.31 0 0" wasd-controls=""></a-plane>
+     <a-text id="text_room1" position="2 -2.585 -8.2" rotation="-23.31 0 0" wasd-controls="" value= "Living Room" side= "double" width= 6.5 height= 6.5 align= "center"></a-text>
+     
+     <!-- Living room contents -->
+
+     <a-plane id="e1b" material="color: #000000; side: double; opacity: 0.5;" geometry="width:1.2; height:0.5" position="221.026 -1.675 99.854" rotation="-23.31 -134.481 0" scale="45.757 48.796 1" wasd-controls=""></a-plane>
+     <a-text id="text_e1b" value= "Kitchen" side= "double" width= 6.5 height= 6.5 align= "center" position="212.812 -1.300 96.617" rotation="-23.31 -134.481 0" scale="45.757 48.796 1" wasd-controls=""></a-text>
+     <a-plane id="e2b" material="color: #000000; side: double; opacity: 0.5;" geometry="width:1.7; height:0.5"  position="-20.372 -2.585 31.279" rotation="0 180 0" scale="4.205 3.137 1" wasd-controls=""></a-plane>
+     <a-text id="text_e2b" value= "Bed Room" side= "double" width= 6.5 height= 6.5 align= "center" position="-20.372 -2.585 31.0" rotation="0 180 0" scale="4.205 3.137 1" wasd-controls=""></a-text>
+     <a-entity id="txtr1" text__textr1="height:40;side:double;value:Spacious Living Room;width:40;xOffset:-0.02;color:#408080" position="2.0847382071165512 10.274 -36.72868771611569"></a-entity>
+     <a-plane id="e3b" material="color: #000000; side: double; opacity: 0.5;" geometry="width:1.8; height:0.5" scale="4.236 3.007 1.000" position="25.553 0.802 -18.672" rotation="-0.371 -41.131 -2.474" wasd-controls=""></a-plane>
+     <a-text id="text_e3b" value = "Living Room" side= "double" width= 6.5 height= 6.5 align= "center" scale="4.236 3.007 1.000" position="25.553 0.802 -18.4" rotation="-0.371 -41.131 -2.474" wasd-controls=""></a-text>
+     <a-entity id="LRhotspot" geometry="primitive:circle" material="opacity:0.5" text__lrhotspot="" position="0 0 -23.338"></a-entity>
+     
+     <!-- Bedroom contents -->
+     
+     <a-image id="arrowheightr2" src="#arrow" position="-2.917 4.644 -10.894" rotation="0 0 90" material="opacity:0.5" geometry="height:6;width:6" ></a-image>
+     <a-text  position="-2.839 4.64 -10.7" id="text_msrheightr2" value= "10 Feet" width=15 height=40 align="center" rotation="0 0 90"></a-text>
+     <a-image id="arrowwidthr2" src="#arrow" position="-17.044 5.221 14.003" material="opacity:0.5" geometry="height:8;width:8" rotation="0 148.0555099366803 0"></a-image>
+     <a-text position="-16.044 4.90 13.003" id="text_msrwidthr2" value="15 Feet" width=20 height=40 align="center" rotation="0 148.0555099366803 0"></a-text>
+     
+     <!-- Kitchen contents -->
+
+     <a-entity id="txtk" text__txtk="height:20;width:40;value:Modular Kitchen;color:#408080" rotation="0 82.1616847604153 0" position="-20.132 10.136 -20.839600118838227"></a-entity>
+
+    </a-scene>
+    <script>
+      
+      var entityEl = document.querySelector('#e1');
+      var entityEl2 = document.querySelector('#e2');
+      var entityEl3 = document.querySelector('#e3');
+      var txtr1 = document.querySelector('#txtr1');
+      var LRhotspot = document.querySelector('#LRhotspot');
+      var entityElb = document.querySelector('#e1b');
+      var entityEl2b = document.querySelector('#e2b');
+      var entityEl3b = document.querySelector('#e3b');
+      var arrowwidthr2 = document.querySelector('#arrowwidthr2');
+      var arrowheightr2 = document.querySelector('#arrowheightr2');
+      var envEl = document.querySelector('#scene');
+      var txtk = document.querySelector('#txtk');
+      var text_e1b=document.querySelector('#text_e1b');
+      var text_e2b=document.querySelector('#text_e2b');
+      var text_e3b=document.querySelector('#text_e3b');
+      var text__msrheightr2=document.querySelector('#text_msrheightr2');
+      var text__msrwidthr2=document.querySelector('#text_msrwidthr2');
+      
+
+      //initial configuration
+      entityEl3b.object3D.visible = false;
+      LRhotspot.object3D.visible = false;
+      arrowheightr2.object3D.visible = false;
+      arrowwidthr2.object3D.visible = false;
+      txtk.object3D.visible = false;
+      text_e3b.object3D.visible= false;
+      text__msrheightr2.object3D.visible = false;
+      text__msrwidthr2.object3D.visible = false;
+
+      entityEl.addEventListener('click', function (event) {
+      kichenSetup();
+      });
+      
+      entityEl2.addEventListener('click', function (event) {
+      bedroomSetup();
+      });
+      
+      entityEl3.addEventListener('click', function (event) {
+      livingroomSetup();
+      }); 
+    
+      entityElb.addEventListener('click', function (event) {
+      kichenSetup();
+      });
+
+      text_e1b.addEventListener('click',function (event) {
+      kichenSetup();
+      });
+
+      entityEl2b.addEventListener('click', function (event) {
+      bedroomSetup();
+      });
+      
+      text_e2b.addEventListener('click', function (event) {
+      bedroomSetup();
+      });
+    
+      entityEl3b.addEventListener('click', function (event) {
+      livingroomSetup();
+      });
+      
+      text_e3b.addEventListener('click', function (event) {
+      livingroomSetup();
+      });
+
+      // setup living room environment
+
+      function livingroomSetup(){
+      envEl.setAttribute('src', "room1.jpg", true);  
+      arrowheightr2.object3D.visible = false;
+      arrowwidthr2.object3D.visible = false;
+      txtr1.object3D.visible = true;
+      entityElb.object3D.visible = true;
+      entityEl2b.object3D.visible = true;
+      entityEl3b.object3D.visible = false;
+      txtk.object3D.visible = false;
+      text__msrheightr2.object3D.visible = false;
+      text__msrwidthr2.object3D.visible = false;
+      text_e1b.object3D.visible = true;
+      text_e2b.object3D.visible = true;
+      text_e3b.object3D.visible = false;
+      }
+  
+      // setup bed room environment
+      
+      function bedroomSetup(){
+      envEl.setAttribute('src', "room2.jpg", true);
+      arrowheightr2.object3D.visible = true;
+      arrowwidthr2.object3D.visible = true;
+      txtr1.object3D.visible = false;
+      entityElb.object3D.visible = false;
+      entityEl2b.object3D.visible = false;
+      entityEl3b.object3D.visible = false;
+      txtk.object3D.visible = false;
+      text__msrheightr2.object3D.visible = true;
+      text__msrwidthr2.object3D.visible = true;
+      text_e1b.object3D.visible = false;
+      text_e2b.object3D.visible = false;
+      text_e3b.object3D.visible = false;
+      }
+
+      // setup kitchen environment
+      
+      function kichenSetup()
+      {
+      envEl.setAttribute('src', "kitchen.jpg", true);  
+      arrowheightr2.object3D.visible = false;
+      arrowwidthr2.object3D.visible = false;
+      txtr1.object3D.visible = false;
+      entityElb.object3D.visible = false;
+      entityEl2b.object3D.visible = false;
+      txtk.object3D.visible = true;
+      entityEl3b.object3D.visible = true;  
+      text__msrheightr2.object3D.visible = false;
+      text__msrwidthr2.object3D.visible = false;
+      text_e1b.object3D.visible = false;
+      text_e2b.object3D.visible = false;
+      text_e3b.object3D.visible = true;
+      } 
+      
+/*
+      var c=true;
+      LRhotspot.addEventListener('click', function (event) {
+      console.log('Entity collided with');
+      if(c==true){
+      LRhotspot.setAttribute('text__lrhotspot', {value: 'Spacious Living Room', side: 'double', width: '40', height: '40', align: 'right',color:'#000000'}, true);  
+      c=false;
+      }
+      else
+      {
+      LRhotspot.removeAttribute('text__lrhotspot');
+      c=true;
+      }
+      });
+      LRhotspot.addEventListener('onmouseout', function (event) {
+      console.log('Entity collided with');
+        
+      });
+*/
+    </script>
+  </body>
+</html>
